@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+<article>
+    <section class="articles">
+        <h2> {{ article.title }} </h2>
+        <div class="metadata"> created {{ article.createdAt | date('d/m/Y') }}
+            at {{ article.createdAt | date('H:i') }} inside the category {{ article.category.title }}
+        </div>
+
+        <div class="content">
+            <img src="{{ article.image }}" alt="">
+              <p> {{ article.content | raw }} </p>
+        </div>
+    </section>
+
+    <section id="commentaires">
+        <h3> we have {{ article.comments | length }} Comments : </h3> <br/>
+        {% for comment in article.comments %}
+            <div class="comment">
+                <div class="row">
+                    <div class="col-3">
+                        {{ comment.author }} et <span> {{ comment.createdAt | date('d/m/Y à H:i')}} </span>
+                    </div>
+
+                    <div class="col">
+                        {{ comment.content | raw }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section> <br/>
+    {% if app.user %}
+
+        {{ form_start(form) }}
+        {{ form_row(form.author, {'attr': {'placeholder': 'Your name '}}) }}
+        {{ form_row(form.content, {'attr': {'placeholder': 'Your comment '}}) }}
+        <button type="submit" class="btn btn-success"> comment </button>
+        {{ form_end(form) }}
+    {% else %}
+        <h3> You cannot leave comments without you are connect </h3>
+        <button  class="btn btn-sm">
+            <a href="{{ path('security_login') }}"> click here to connect </a>
+        </button>
+    {% endif %}
+</article>
+
+
+{% endblock %}
