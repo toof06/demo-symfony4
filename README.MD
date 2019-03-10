@@ -9,6 +9,10 @@ and for artciles information we had requiered fzaninotto/faker.
 1)- 
 $ composer install
 
+2)-
+
+$ php bin/console server:run 
+
 2)- 
 $ php bin/console doctrine:database:create
 
