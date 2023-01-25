@@ -1,27 +1,45 @@
-This is just a simple application with the MVC architecture.
-In the file .dev  give your parameters of connection 
-change this : DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
-or just modify doctrine.yml and give your parameters of connection.
+# A simple application with Symfony PHP framwork
 
-this application require php 7.1.22
-and for artciles information we had requiered fzaninotto/faker. 
 
-1)- 
-$ composer install
+## This just an example with MVC Architecture which is made Symfony 4
 
-2)-
+### You can read and edit any articles 
+### You can authenticate you with the simple registration form
+### You can add articles without authentication
+### You can add a comments but you must be connected
 
-$ php bin/console server:run 
+# requirements  
+git <br> 
+php 7.1.^ <br> 
+composer 2.2
 
-2)- 
-$ php bin/console doctrine:database:create
+# Installations 
 
-3)- 
-$ php bin/console doctrine:schema:create 
+```
+git clone https://github.com/toof06/demo-symfony4.git
+```
 
-4)-
-$ php bin/console doctrine:fixtures:load 
+```
+composer install
+```
 
-5)-
-$ php bin/console server:run 
+```
+edit the file .env with your database informations 
+```
+
+```
+php bin/console doctrine:database:create 
+```
+
+```
+php bin/console doctrine:schema:create
+```
+```
+php bin/console doctrine:fixtures:load
+```
+
+```
+php bin/console server:run 
+```
+
 
