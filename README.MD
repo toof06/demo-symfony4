@@ -1,7 +1,8 @@
-# A simple application with Symfony PHP framwork
+# A simple application with Symfony PHP framwork  <br>
+![name-of-you-image](public/home.png)
 
 
-## This just an example with MVC Architecture which is made Symfony 4
+## An example with MVC Architecture which is made with Symfony 4
 
 ### You can read and edit any articles 
 ### You can authenticate you with the simple registration form
